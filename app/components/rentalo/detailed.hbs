@@ -10,14 +10,13 @@
     Share on Twitter
   </ShareButton>
 </Jumbo>
-
 {{#if this.isSmall}}
 
 <div class="bg-welcome mb-16">
   <div class="p-16  ">
     <div class="rental grid grid-cols-3">
       <div class="content-center">
-        <Rental::Image src={{@rental.image}} @toggleImage={{@this.toggleImage}} @isSmall={{this.isSmall}}
+        <Rentalo::Image src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
           alt="A picture of {{@rental.title}}" />
       </div>
       <div class=" -ml-56 details ">
@@ -59,7 +58,7 @@
     <div class="mb-12">
       {{!Le pasoel alias de @toggleimage con la funcion "toggleImage" y le paso la variable
       isSmall}}
-      <Rental::Image src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
+      <Rentalo::Image src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
         alt="A picture of {{@rental.title}}" />
     </div>
     <div class="details ">
