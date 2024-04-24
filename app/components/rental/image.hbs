@@ -1,7 +1,9 @@
 <div>
-  <button type="button" class="image  {{if this.isSmall " rounded-xl mb-2 object-cover h-38 w-48 ..."}}" {{on "click"
-    this.toggleSize}}>
-    <img class="rounded-xl " ...attributes>
-    <small class="text-blue-500">View {{if this.isLarge "Large" "Smaller"}}</small>
+  <button type="button" class="hover:bg-blue-200 rounded-xl {{if @isSmall " rounded-xl mb-2 object-cover h-38 w-48 ..."
+    }}" {{on "click" this.toggleSize}}>
+    <img class=" rounded-xl " ...attributes>
+    <small class="text-blue-500">View {{if @isSmall "larger" "smaller"}}
+
+    </small>
   </button>
 </div>

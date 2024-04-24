@@ -1,17 +1,24 @@
 <Jumbo>
-  <h2>Contact Us</h2>
+  <h2 class="text-5xl">Contact Us</h2>
   <p>
     Super Rentals Representatives would love to help you<br>
     choose a destination or answer any questions you may have.
   </p>
   <address>
-    Super Rentals HQ
-    <p>
-      1212 Test Address Avenue<br>
-      Testington, OR 97233
-    </p>
-    <a href="tel:503.555.1212">+1 (503) 555-1212</a><br>
-    <a href="mailto:superrentalsrep@emberjs.com">superrentalsrep@emberjs.com</a>
+    <div class="mt-9">
+      <p class="font-thin"> Super Rentals HQ</p>
+      <p class="font-thin">
+        1212 Test Address Avenue<br>
+        Testington, OR 97233
+      </p>
+      <div class="mt-9">
+        <a class="text-blue-600" href="tel:503.555.1212">+1 (503) 555-1212</a><br>
+        <a class="text-blue-600" href="mailto:superrentalsrep@emberjs.com">superrentalsrep@emberjs.com</a>
+      </div>
+    </div>
   </address>
-  <LinkTo @route="about" class="button">About</LinkTo>
+  <div class="mt-9">
+    <LinkTo class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+      @route="about" class="button">About</LinkTo>
+  </div>
 </Jumbo>

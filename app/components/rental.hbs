@@ -1,8 +1,11 @@
+{{#if this.isSmall}}
+
 <div class="bg-welcome mb-16">
   <div class="p-16  ">
     <div class="rental grid grid-cols-3">
       <div class="content-center">
-        <Rental::Image src={{@rental.image}} alt="A picture of {{@rental.title}}" />
+        <Rental::Image src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
+          alt="A picture of {{@rental.title}}" />
       </div>
       <div class=" -ml-56 details ">
         <div>
@@ -36,3 +39,48 @@
     </div>
   </div>
 </div>
+{{else}}
+<div class="bg-welcome mb-16 flex justify-center ...">
+  <div class="p-16  ">
+
+    <div class="mb-12">
+      {{!Le pasoel alias de @toggleimage con la funcion "toggleImage" y le paso la variable
+      isSmall}}
+      <Rental::Image src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
+        alt="A picture of {{@rental.title}}" />
+    </div>
+    <div class="details ">
+
+      <div class="mb-4 ">
+        <h3 class="text-xl mb-4">
+          <LinkTo @route="rental" @model={{@rental}}> {{!----}}
+            {{@rental.title}}{{!----}}
+          </LinkTo>
+        </h3>
+
+        <div class="details grid grid-cols-2 ">
+          <div class="mb-16 detail owner">
+            <span>Owner:</span> <span class="font-thin">{{@rental.owner}}</span>
+          </div>
+          <div>
+            <span>Typeeee:</span> <span class="font-thin">{{@rental.type}}</span>
+          </div>
+        </div>
+
+
+        <div class="details grid grid-cols-2 ">
+          <div>
+            <span>Location:</span> <span class="font-thin">{{@rental.city}}</span>
+          </div>
+          <div>
+
+
+            <span>Number of bedrooms:</span> <span class="font-thin">{{@rental.bedrooms}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}

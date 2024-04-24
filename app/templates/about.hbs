@@ -1,9 +1,12 @@
 <Jumbo>
-  <h2>About Super Rentals</h2>
+  <h2 class="text-5xl">About Super Rentals</h2>
   <p>
     The Super Rentals website is a delightful project created to explore Ember.
     By building a property rental site, we can simultaneously imagine traveling
     AND building Ember applications.
   </p>
-  <LinkTo @route="contact" class="button">Contact Us</LinkTo>
+  <div class="mt-9">
+    <LinkTo class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+      @route="contact" class="button">Contact Us</LinkTo>
+  </div>
 </Jumbo>
