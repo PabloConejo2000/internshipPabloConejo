@@ -10,42 +10,43 @@
     Share on Twitter
   </ShareButton>
 </Jumbo>
+
 {{#if this.isSmall}}
 
-<div class="bg-welcome mb-16">
+<div class="mb-16">
   <div class="p-16  ">
-    <div class="rental grid grid-cols-3">
+    <div class="rental grid grid-cols-2">
       <div class="content-center">
-        <Rentalo::Image src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
+        <Rentalo::Image-detailed src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
           alt="A picture of {{@rental.title}}" />
       </div>
-      <div class=" -ml-56 details ">
+      <div class=" ml-10 details ">
         <div>
           <div class="mb-4">
-            <h3 class="text-xl text-blue-600">
-              <LinkTo @route="rental" @model={{@rental}}> {{!----}}
+            <h3 class="text-5xl  ">
+              <LinkTo @route="rental" @model={{@rental}}> About{{!----}}
                 {{@rental.title}}{{!----}}
               </LinkTo>
             </h3>
           </div>
-          <div class="details grid grid-cols-2 ">
-            <div class="mb-16 detail owner">
+          <div class="details grid mb-4">
+            <div class="detail owner mb-8">
               <span>Owner:</span> <span class="font-thin">{{@rental.owner}}</span>
             </div>
-            <div class="detail type">
+            <div class="detail type mb-8 ">
               <span>Type:</span> <span class="font-thin">{{@rental.type}}</span>
 
             </div>
-          </div>
-          <div class="details grid grid-cols-2 ">
-            <div class="detail location">
+            <div class="detail location mb-8">
               <span>Location:</span> <span class="font-thin">{{@rental.city}}</span>
 
             </div>
-            <div class="detail bedrooms">
+            <div class="detail bedrooms mb-8">
               <span>Number of bedrooms:</span> <span class="font-thin">{{@rental.bedrooms}}</span>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>
@@ -58,35 +59,31 @@
     <div class="mb-12">
       {{!Le pasoel alias de @toggleimage con la funcion "toggleImage" y le paso la variable
       isSmall}}
-      <Rentalo::Image src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
+      <Rentalo::Image-detailed src={{@rental.image}} @toggleImage={{this.toggleImage}} @isSmall={{this.isSmall}}
         alt="A picture of {{@rental.title}}" />
     </div>
-    <div class="details ">
-
-      <div class="mb-4 ">
-        <h3 class="text-xl mb-4">
-          <LinkTo @route="rental" @model={{@rental}}> {{!----}}
-            {{@rental.title}}{{!----}}
-          </LinkTo>
-        </h3>
-
-        <div class="details grid grid-cols-2 ">
-          <div class="mb-16 detail owner">
+    <div class=" ml-10 details ">
+      <div>
+        <div class="mb-4">
+          <h3 class="text-5xl  ">
+            <LinkTo @route="rental" @model={{@rental}}> About{{!----}}
+              {{@rental.title}}{{!----}}
+            </LinkTo>
+          </h3>
+        </div>
+        <div class="details grid mb-4">
+          <div class="detail owner mb-8">
             <span>Owner:</span> <span class="font-thin">{{@rental.owner}}</span>
           </div>
-          <div>
-            <span>Typeeee:</span> <span class="font-thin">{{@rental.type}}</span>
+          <div class="detail type mb-8 ">
+            <span>Type:</span> <span class="font-thin">{{@rental.type}}</span>
+
           </div>
-        </div>
-
-
-        <div class="details grid grid-cols-2 ">
-          <div>
+          <div class="detail location mb-8">
             <span>Location:</span> <span class="font-thin">{{@rental.city}}</span>
+
           </div>
-          <div>
-
-
+          <div class="detail bedrooms mb-8">
             <span>Number of bedrooms:</span> <span class="font-thin">{{@rental.bedrooms}}</span>
           </div>
         </div>
@@ -94,5 +91,7 @@
       </div>
     </div>
   </div>
+
+
 </div>
 {{/if}}
