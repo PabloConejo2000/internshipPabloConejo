@@ -3,6 +3,14 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
 
+//interface RentalImageComponentArgs {
+//toggleImage:(a:string ,b:number) => void;
+//variable: string;
+//toggleImage: () => void
+//}
+
+
+
 export default class RentalImageComponent extends Component {
 
 
@@ -11,6 +19,7 @@ export default class RentalImageComponent extends Component {
     this.args.toggleImage();
 
   }
+
 
 
 }
