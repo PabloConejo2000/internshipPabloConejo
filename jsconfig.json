@@ -1,1 +1,17 @@
-{"compilerOptions":{"target":"es6","experimentalDecorators":true},"exclude":["node_modules","bower_components","tmp","vendor",".git","dist"]}
+{
+    "extends": "@tsconfig/ember/tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "my-app/tests/*": [
+                "tests/*"
+            ],
+            "my-app/*": [
+                "app/*"
+            ],
+            "*": [
+                "types/*"
+            ]
+        }
+    }
+}

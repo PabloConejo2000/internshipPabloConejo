@@ -2,7 +2,14 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
-export default class RentalsComponent extends Component {
+interface RentalIndexComponentArgs {
+  query: string;
+  isSmall: boolean;
+  toggleImage: (a: boolean, b: boolean) => void;
+
+}
+
+export default class RentalIndexComponent extends Component<RentalIndexComponentArgs> {
   @tracked
   query = '';
 

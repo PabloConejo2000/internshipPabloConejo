@@ -9,9 +9,13 @@ import { action } from '@ember/object';
 //toggleImage: () => void
 //}
 
+interface ImageDetailedComponentArgs {
+  toggleImage: (a: string, b: number) => void;
+}
 
 
-export default class RentalImageComponent extends Component {
+
+export default class ImageDetailedComponent extends Component<ImageDetailedComponentArgs> {
 
 
   @action
