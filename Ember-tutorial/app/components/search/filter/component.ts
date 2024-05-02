@@ -1,9 +1,11 @@
 import Component from '@glimmer/component';
+import RentalModel from 'my-app/models/rental';
 
 
 interface FilterComponentArgs {
   query: string;
-  rentals: any[];
+
+  rentals: Array<RentalModel>;
 
 }
 
