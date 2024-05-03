@@ -13,4 +13,5 @@ Router.map(function () {
   this.route('about');
   this.route('contact', { path: '/getting-in-touch' });
   this.route('rental', { path: '/rentals/:rental_id' }); //para acceder a cada uno en particular(rental id para poder acceder a cada uno)
+  this.route('dog');
 });

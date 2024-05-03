@@ -17,6 +17,7 @@ export default class ShareComponent extends Component<ShareComponentArgs> {
   router?: Route;
 
   get currentURL() {
+    //I cant ommit the warning
     return new URL(this.router?.currentURL, window.location.origin);
   }
 

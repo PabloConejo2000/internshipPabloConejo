@@ -12,12 +12,13 @@ interface FilterComponentArgs {
 
 
 export default class FilterComponent extends Component<FilterComponentArgs> {
-  get results() {
-    let { rentals, query } = this.args;
+  get results(): Array<RentalModel> {
+    let { query } = this.args;
+    let rentals = this.args.rentals;
 
 
     if (query) {
-      rentals = rentals.filter((rental) => rental.title.includes(query));
+      rentals = rentals.filter((rental: RentalModel) => rental.title.toLowerCase().includes(query.toLowerCase()));
     }
 
     return rentals;
