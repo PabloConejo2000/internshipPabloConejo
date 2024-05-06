@@ -1,45 +1,38 @@
-<!-- 
-<div>
-    <h2 class="mb-2 text-center text-2xl">Vamos a mostrar perros aleatorios</h2>
-</div>
-<div class=" flex items-center justify-center ">
-
-    <button class=" bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700
-            rounded  " {{on 'click' this.getRandomDog}}> Get Random Dog</button>
-</div>
-<div class=" mb-2 flex items-center justify-center ">
-    {{#if this.dogImage}}
-    <img src={{this.dogImage}} alt="random dog image">
-    {{/if}}
-</div>
--->
-
-
-
 <div class="place-content-center ">
     <div>
-        <h2 class="mb-2 text-center text-2xl">Vamos a mostrar perros aleatorios</h2>
+        <h2 class="mb-2 text-center text-2xl">If you press the following button u will get a random dog</h2>
     </div>
     <div class="mb-2  flex items-center justify-center ">
+        {{! aquí cuando le damos click llamamos a la funcion changeDogState pasandole el parametro dog para cambiar el
+        estado}}
         <button class=" bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700
-            rounded  " {{on "click" (fn this.updateDogState 'dog' )}}>Get a random dog image</button>
+            rounded  " {{on "click" (fn this.changeDogState 'dog' )}}>Get a random dog image</button>
 
+    </div>
+    <div>
+        <h2 class="mb-2 text-center text-2xl">If you press the followinf button u will get a boxer dog</h2>
     </div>
     <div class="mb-2  flex items-center justify-center ">
+        {{!En este hacemos lo mismo que arriba pero pasandole el parametro boxer para cambiar el estado}}
         <button class=" bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700
-            rounded  " {{on "click" (fn this.updateDogState 'boxer' )}}>Change to boxer</button>
+            rounded  " {{on "click" (fn this.changeDogState 'boxer' )}}>Change to boxer</button>
     </div>
     <div class=" mb-2 flex items-center justify-center ">
-
-        <img class="w-50 h-50 " src={{this.dogImage}} alt='Random Dog' {{did-insert this.getRandomDog}}>
+        {{! Se muestra la imagen "dogImage(que es la variable que contiene la ruta de la imagen)"
+        // cuando se renderiza el componente gracias al did-insert llama a la funcion que toca para renderizar la imagen
+        //Con el did-update llamamos a la funcion updateDog y le pasamos como parametro dogImageStated
+        //de esta manera puedo llamar con la funcion "updateDog" a la funcion "getRandomDog" o "getBoxerDog" y me pone
+        un perro u otro
+        }}
+        <img class="w-50 h-50 " src={{this.dogImage}} alt='Random Dog' {{did-insert this.getRandomDog}} {{did-update
+            this.updateDog this.dogImageStated}}>
 
     </div>
 
     <div class=" mb-2 flex items-center justify-center ">
 
 
-        <img class="w-50 h-50 " src={{this.dogImage}} alt='Random Dog' {{did-update this.updateDog
-            this.dogImageUpdated}}>
+
 
     </div>
 
