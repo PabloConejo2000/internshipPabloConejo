@@ -18,6 +18,18 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    MSWJS: {
+      enabled: /true/i.test(process.env.MSWJS),
+      passthroughURLs: [
+        //Configure the urls and method you want to fetch real data
+        /* Example:
+        {
+          method: 'POST',
+          url: '/rfn-proxy/fsp-rest/search/metadata',
+        },
+        */
+      ],
+    },
   };
 
   if (environment === 'development') {
